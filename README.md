@@ -63,25 +63,27 @@ https://www.tonymacx86.com/threads/guide-installing-macos-mojave-10-14-2-on-inte
 2. Open EFI folder of Internal HD/SSD (/Volumes/EFI/EFI/Clover)
 3. Open config.plist via text editor like Sublime  
 4. Add below code in KextsToPatch section
-
-```<dict>
-  ```<key>Comment</key>
-  ```<string>disable port limit in XHCI kext (credit DalianSky,Ricky)</string>
-  ```<key>MatchOS</key>
-  ```<string>10.14.1,10.14.2</string>
-  ```<key>Name</key>
-  ```<string>com.apple.driver.usb.AppleUSBXHCI</string>
-  ```<key>Find</key>
-  ```<data>g/sPD4OPBAAA</data>
-  ```<key>Replace</key>
-  ```<data>g/sPkJCQkJCQ</data>
-```</dict>
+```
+<dict>
+  <key>Comment</key>
+  <string>disable port limit in XHCI kext (credit DalianSky,Ricky)</string>
+  <key>MatchOS</key>
+  <string>10.14.1,10.14.2</string>
+  <key>Name</key>
+  <string>com.apple.driver.usb.AppleUSBXHCI</string>
+  <key>Find</key>
+  <data>g/sPD4OPBAAA</data>
+  <key>Replace</key>
+  <data>g/sPkJCQkJCQ</data>
+</dict>
+```
 5. Shutdown NUC and plug in the Bluetooth adapter (USB).
 6. Click "F2" button to enter bios.
 7. Devices > Onboard Devices > Bluetooth (disable).
 8. Save and reboot.
 
 Refer to 
+
 https://blog.daliansky.net/macOS-Mojave-10.14.6-18G87-Release-version-with-Clover-5033-original-image.html
 https://www.jianshu.com/p/d52551119b35
 https://www.tonymacx86.com/threads/guide-installing-macos-mojave-10-14-2-on-intel-nuci5beh-using-clover-uefi-updating-to-mojave-10-14-6-on-post-2.268502/#post-1881331
